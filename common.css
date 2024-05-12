@@ -38,6 +38,13 @@ body {
 .box:hover {
 	border: 4px solid #ffffff;
 }
+a {
+	color: #9eb5d8
+}
+a:hover {
+	color: #d39ed8
+}
+
 
 .socials-container {
 	border: 2px solid #a0a0a0;
