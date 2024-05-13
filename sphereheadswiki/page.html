@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sphereheads Wiki</title>
+		<link href="common.css" rel="stylesheet">
+		<link href="commonwiki.css" rel="stylesheet">
+		<link href="fonts.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">			
+			<header>
+				<div class="logo">sphereheads wiki</div>
+			</header>
+			<nav id="nav">
+				<input id="nav-search-filter" placeholder="Search filter" oninput="navFilter(this.value)">
+				<button onclick="navigateTo('intro.html')">Introduction</button>
+				<button onclick="navigateTo('history.html')">History</button>
+				<button onclick="navigateTo('guns.html')">Guns</button>
+				<button onclick="navigateTo('entities.html')">Entities</button>
+				<button onclick="navigateTo('characters.html')">Characters</button>
+			</nav>
+			<main>
+				<iframe id="main-frame" width="100%" height="100%" src="w/null.html"></iframe>
+			</main>
+			<footer>
+				<p>&copy; Copyright 2024 aekurmou</p>
+				<p><i>Last updated 5/12/2024</i></p>
+			</footer>
+		</div>
+		<script>
+			mainFrame = document.getElementById("main-frame")
+			function navigateTo(l) {
+				mainFrame.src = "w/" + l
+			}
+			
+			navigateTo('intro.html')
+		</script>
+		<script src="navfilter.js"></script>
+	</body>
+</html>

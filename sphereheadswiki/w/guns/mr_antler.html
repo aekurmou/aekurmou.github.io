@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="../../common.css" rel="stylesheet">
+		<link href="../../fonts.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Antler Branch</h1>
+		<hr>	
+		<div class="item-view">
+			<div class="title">
+				Antler Branch
+			</div>
+			<div class="image">
+				<img src="../media/mr_antler.png" alt="Antler Branch" width="100%">
+			</div>
+			<div class="misc">
+				<table border="0">
+					<tbody>
+						<tr>
+							<th colspan="2">General</th>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td><a href="../guns.html#MR">Marksman Rifle</a></td>
+						</tr>
+						<tr>
+							<td>Inventory Type</td>
+							<td>Major Weapon</td>
+						</tr>
+						<tr>
+							<td>Frequency</td>
+							<td>
+								<span id="calc-rps">1.75</span>
+								<span class="unit">round/sec</span>
+								<br><span id="calc-rpm"></span>
+								<span class="unit">round/min</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Magazine &amp; Ammunition</td>
+							<td>							
+								8 <span class="unit">normal</span>
+								<a href="../ammo.html#Medium">
+									<div class="ammo">
+										<img style="display: block; margin: 0 auto 0 auto" src="../media/ammo_med.png" height="48px">
+										Medium
+									</div>	
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">Damage</th>
+						</tr>
+						<tr>
+							<td>Body</td>
+							<td id="calc-dmg-body">
+								<span id="calc-dmg">35.12</span> <span class="unit">hp/round</span>
+								<br><span id="calc-dps">?</span> <span class="unit">hp/sec</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Head (x<span id="calc-dmg-head-mult">2</span>)</td>
+							<td id="calc-dmg-head"></td>
+						</tr>
+						<tr>
+							<td>Arm (x<span id="calc-dmg-arm-mult">0.9</span>)</td>
+							<td id="calc-dmg-arm"></td>
+						</tr>
+						<tr>
+							<td>Leg (x<span id="calc-dmg-leg-mult">0.75</span>)</td>
+							<td id="calc-dmg-leg"></td>
+						</tr>
+						<tr>
+							<td>Time to Kill</td>
+							<td>
+								<span id="calc-ttk">?</span> <span class="unit">sec</span>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">Attachment Compatibilities</th>
+						</tr>
+						<tr>
+							<td>Stock</td>
+							<td>&check;</td>
+						</tr>
+						<tr>
+							<td>Underbarrel</td>
+							<td>&check;</td>
+						</tr>
+						<tr>
+							<td>Optic</td>
+							<td>&check; (4)</td>
+						</tr>
+						<tr>
+							<td>Magazine</td>
+							<td>&#x2716;</td>
+						</tr>
+						<tr>
+							<td>Barrel</td>
+							<td>&#x2716;</td>
+						</tr>
+						<tr>
+							<td>Laser</td>
+							<td>&check;</td>
+						</tr>
+					</tbody>
+				</table>
+				<script src="gunstatscalc.js"></script><!--this following calculates it-->
+			</div>
+		</div>
+		<h2>Overview</h2>
+		<p>The Antler Branch is a lever-action <a href="../guns.html#MR">marksman rifle</a>. It accepts stocks, underbarrels, optics (4), and lasers.</p>
+		<section id="contents">
+			<b>Contents</b>
+			<ol>
+				<li><a href="#Stats">Stats</a></li>
+				<li><a href="#Loot">Loot</a></li>
+				<li><a href="#Lore">Lore</a></li>
+				<li><a href="#History">History</a></li>
+				<li><a href="#Gallery">Gallery</a></li>
+				<li><a href="#Trivia">Trivia</a></li>
+			</ol>
+		</section>
+		<hr>
+		<h2 id="Stats">Stats</h2>		
+		<table style="min-width: 40%">
+			<tbody>
+				<tr>
+					<th colspan="2"><h3>Advanced Stats</h3></th>
+				</tr>
+				<tr>
+					<th>Mobility</th>
+					<td>97.6<span class="unit">%</span></td>
+				</tr>
+				<tr>
+					<th>Equip Delay</th>
+					<td>0.5<span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Reload Type</th>
+					<td>Insertion</td>
+				</tr>
+				<tr>
+					<th>Reload Replenish Time</th>
+					<td>0.8<span style="text-decoration: overline">3</span><span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Reload Time From Rewind</th>
+					<td>1<span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Reload Time To Rewind</th>
+					<td>0.41<span style="text-decoration: overline">6</span><span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Reload Finish Time</th>
+					<td>1.41<span style="text-decoration: overline">6</span><span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Muzzle Velocity</th>
+					<td>695<span class="unit">m/sec</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Mass</th>
+					<td>0.0021<span class="unit">kg</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Damage Falloff Start Distance</th>
+					<td>128<span class="unit">m</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Damage Falloff End Distance</th>
+					<td>512<span class="unit">m</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Damage Falloff Percentage</th>
+					<td>-25<span class="unit">%</span></td>
+				</tr>
+				<tr>
+					<th>Recoil Strength</th>
+					<td>52.5</td>
+				</tr>
+				<tr>
+					<th>Recoil Strength Increase</th>
+					<td>15</td>
+				</tr>
+				<tr>
+					<th>Recoil Predictability</th>
+					<td>75<span class="unit">%</span></td>
+				</tr>
+				<tr>
+					<th>Hip Spread Angle</th>
+					<td>2.794<span class="unit">&deg;</span></td>
+				</tr>
+				<tr>
+					<th>ADS Spread Angle</th>
+					<td>0.043<span class="unit">&deg;</span></td>
+				</tr>
+				<tr>
+					<th colspan="2"><h3>Technicalities</h3></th>
+				</tr>
+				<tr>
+					<th>Internal Name</th>
+					<td><code>mr_antler</code></td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<h2 id="Loot">Loot</h2>
+		<p>The Antler Branch can be generally found in all spots of loot.</p>
+		<hr>
+		<h2 id="Lore">Lore</h2>
+		<p>The Antler Branch is manufactured by an unknown company.</p>
+		<hr>
+		<h2 id="History">History</h2>
+		<table class="changelog" border="1">
+			<tbody>
+				<tr>
+					<th>Date</th>
+					<th>Version</th>
+					<th>Info</th>
+				</tr>
+				<tr>
+					<td>5/12/2024</td>
+					<td>Pre-Alpha</td>
+					<td>This weapon has become documented in this wiki.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<h2 id="Gallery">Gallery</h2>
+		<hr>
+		<h2 id="Trivia">Trivia</h2>
+		<ul>
+			<li>Antler Branch is the first marksman rifle to be added to the game (8/30/2023; according to its .blend file's creation date).</li>
+		</ul>
+	</body>	
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="../../common.css" rel="stylesheet">
+		<link href="../../fonts.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Nova 50</h1>
+		<hr>	
+		<div class="item-view">
+			<div class="title">
+				Nova 50
+			</div>
+			<div class="image">
+				<img src="../media/hv_nova50.png" alt="Nova 50" width="100%">
+			</div>
+			<div class="misc">
+				<table border="0">
+					<tbody>
+						<tr>
+							<th colspan="2">General</th>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td><a href="../guns.html#HV">Heavy Weapon</a></td>
+						</tr>
+						<tr>
+							<td>Inventory Type</td>
+							<td>Major Weapon</td>
+						</tr>
+						<tr>
+							<td>Frequency</td>
+							<td>
+								<span id="calc-rps">4</span>
+								<span class="unit">round/sec</span>
+								<br><span id="calc-rpm"></span>
+								<span class="unit">round/min</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Magazine &amp; Ammunition</td>
+							<td>							
+								1 + 3 <span class="unit">normal</span>
+								<a href="../ammo.html#Nova50">
+									<div class="ammo">
+										<img style="display: block; margin: 0 auto 0 auto" src="../media/ammo_nova50.png" height="48px">
+										Special
+									</div>	
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">Damage</th>
+						</tr>
+						<tr>
+							<td>Body</td>
+							<td id="calc-dmg-body">
+								<span id="calc-dmg">318.3</span> <span class="unit">hp/round</span>
+								<br><span id="calc-dps">?</span> <span class="unit">hp/sec</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Head (x<span id="calc-dmg-head-mult">2</span>)</td>
+							<td id="calc-dmg-head"></td>
+						</tr>
+						<tr>
+							<td>Arm (x<span id="calc-dmg-arm-mult">0.9</span>)</td>
+							<td id="calc-dmg-arm"></td>
+						</tr>
+						<tr>
+							<td>Leg (x<span id="calc-dmg-leg-mult">0.75</span>)</td>
+							<td id="calc-dmg-leg"></td>
+						</tr>
+						<tr>
+							<td>Time to Kill</td>
+							<td>
+								<span id="calc-ttk">?</span> <span class="unit">sec</span>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">Attachment Compatibilities</th>
+						</tr>
+						<tr>
+							<td>Stock</td>
+							<td>&#x2716;</td>
+						</tr>
+						<tr>
+							<td>Underbarrel</td>
+							<td>&#x2716;</td>
+						</tr>
+						<tr>
+							<td>Optic</td>
+							<td>&#x2716;</td>
+						</tr>
+						<tr>
+							<td>Magazine</td>
+							<td>&#x2716;</td>
+						</tr>
+						<tr>
+							<td>Barrel</td>
+							<td>&#x2716;</td>
+						</tr>
+						<tr>
+							<td>Laser</td>
+							<td>&#x2716;</td>
+						</tr>
+					</tbody>
+				</table>
+				<script src="gunstatscalc.js"></script><!--this following calculates it-->
+			</div>
+		</div>
+		<h2>Overview</h2>
+		<p>The Nova 50 is a rocket launcher (<a href="../guns.html#HV">heavy weapon</a>). It fires explosive rockets. It uses its own integrated scope. It doesn't accept any attachments.</p>
+		<section id="contents">
+			<b>Contents</b>
+			<ol>
+				<li><a href="#Stats">Stats</a></li>
+				<li><a href="#Loot">Loot</a></li>
+				<li><a href="#Lore">Lore</a></li>
+				<li><a href="#History">History</a></li>
+				<li><a href="#Gallery">Gallery</a></li>
+				<li><a href="#Trivia">Trivia</a></li>
+			</ol>
+		</section>
+		<hr>
+		<h2 id="Stats">Stats</h2>		
+		<table style="min-width: 40%">
+			<tbody>
+				<tr>
+					<th colspan="2"><h3>Advanced Stats</h3></th>
+				</tr>
+				<tr>
+					<th>Mobility</th>
+					<td>70<span class="unit">%</span></td>
+				</tr>
+				<tr>
+					<th>Equip Delay</th>
+					<td>1.<span style="text-decoration: overline">3</span><span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Reload Type</th>
+					<td>Magazine</td>
+				</tr>
+				<tr>
+					<th>Reload Replenish Time</th>
+					<td>2.<span style="text-decoration: overline">6</span><span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Reload Finish Time</th>
+					<td>4<span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Muzzle Velocity</th>
+					<td>121.2<span class="unit">m/sec</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Mass</th>
+					<td>0.45<span class="unit">kg</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Damage Falloff Start Distance</th>
+					<td>1024<span class="unit">m</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Damage Falloff End Distance</th>
+					<td>2048<span class="unit">m</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Damage Falloff Percentage</th>
+					<td>0<span class="unit">%</span></td>
+				</tr>
+				<tr>
+					<th>Recoil Strength</th>
+					<td>42</td>
+				</tr>
+				<tr>
+					<th>Recoil Strength Increase</th>
+					<td>0</td>
+				</tr>
+				<tr>
+					<th>Recoil Predictability</th>
+					<td>0<span class="unit">%</span></td>
+				</tr>
+				<tr>
+					<th>Hip Spread Angle</th>
+					<td>1.125<span class="unit">&deg;</span></td>
+				</tr>
+				<tr>
+					<th>ADS Spread Angle</th>
+					<td>0.07<span class="unit">&deg;</span></td>
+				</tr>
+				<tr>
+					<th colspan="2"><h3>Technicalities</h3></th>
+				</tr>
+				<tr>
+					<th>Internal Name</th>
+					<td><code>hv_nova50</code></td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<h2 id="Loot">Loot</h2>
+		<p>Because it is a special weapon, the Nova 50 can only be found in special boxes.</p>
+		<hr>
+		<h2 id="Lore">Lore</h2>
+		<p>The Nova 50 is manufactured by an unknown company.</p>
+		<hr>
+		<h2 id="History">History</h2>
+		<table class="changelog" border="1">
+			<tbody>
+				<tr>
+					<th>Date</th>
+					<th>Version</th>
+					<th>Info</th>
+				</tr>
+				<tr>
+					<td>5/12/2024</td>
+					<td>Pre-Alpha</td>
+					<td>This weapon has become documented in this wiki.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<h2 id="Gallery">Gallery</h2>
+		<hr>
+		<h2 id="Trivia">Trivia</h2>
+		<ul>
+			
+		</ul>
+	</body>	
+</html>

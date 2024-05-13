@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="../../common.css" rel="stylesheet">
+		<link href="../../fonts.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>N3 Maki</h1>
+		<hr>	
+		<div class="item-view">
+			<div class="title">
+				N3 Maki
+			</div>
+			<div class="image">
+				<img src="../media/hg_n3.png" alt="N3 Maki" width="100%">
+			</div>
+			<div class="misc">
+				<table border="0">
+					<tbody>
+						<tr>
+							<th colspan="2">General</th>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td><a href="../guns.html#HG">Pistol</a></td>
+						</tr>
+						<tr>
+							<td>Inventory Type</td>
+							<td>Minor Weapon</td>
+						</tr>
+						<tr>
+							<td>Frequency</td>
+							<td>
+								<span id="calc-rps">8</span>
+								<span class="unit">round/sec</span>
+								<br><span id="calc-rpm"></span>
+								<span class="unit">round/min</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Magazine &amp; Ammunition</td>
+							<td>							
+								15 <span class="unit">normal</span>
+								<br>20 <span class="unit">at mag level 1</span>
+								<br>25 <span class="unit">at mag level 2</span>
+								<br>30 <span class="unit">at mag level 3</span>
+								<a href="../ammo.html#Light">
+									<div class="ammo">
+										<img style="display: block; margin: 0 auto 0 auto" src="../media/ammo_lig.png" height="48px">
+										Light
+									</div>	
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">Damage</th>
+						</tr>
+						<tr>
+							<td>Body</td>
+							<td id="calc-dmg-body">
+								<span id="calc-dmg">19.4</span> <span class="unit">hp/round</span>
+								<br><span id="calc-dps">?</span> <span class="unit">hp/sec</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Head (x<span id="calc-dmg-head-mult">1.75</span>)</td>
+							<td id="calc-dmg-head"></td>
+						</tr>
+						<tr>
+							<td>Arm (x<span id="calc-dmg-arm-mult">0.9</span>)</td>
+							<td id="calc-dmg-arm"></td>
+						</tr>
+						<tr>
+							<td>Leg (x<span id="calc-dmg-leg-mult">0.75</span>)</td>
+							<td id="calc-dmg-leg"></td>
+						</tr>
+						<tr>
+							<td>Time to Kill</td>
+							<td>
+								<span id="calc-ttk">?</span> <span class="unit">sec</span>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">Attachment Compatibilities</th>
+						</tr>
+						<tr>
+							<td>Stock</td>
+							<td>&#x2716;</td>
+						</tr>
+						<tr>
+							<td>Underbarrel</td>
+							<td>&#x2716;</td>
+						</tr>
+						<tr>
+							<td>Optic</td>
+							<td>&check; (1)</td>
+						</tr>
+						<tr>
+							<td>Magazine</td>
+							<td>&check;</td>
+						</tr>
+						<tr>
+							<td>Barrel</td>
+							<td>&check;</td>
+						</tr>
+						<tr>
+							<td>Laser</td>
+							<td>&check;</td>
+						</tr>
+					</tbody>
+				</table>
+				<script src="gunstatscalc.js"></script><!--this following calculates it-->
+			</div>
+		</div>
+		<h2>Overview</h2>
+		<p>The N3 Maki is a semi-automatic <a href="../guns.html#HG">pistol</a>. It is a minor weapon.</p>
+		<section id="contents">
+			<b>Contents</b>
+			<ol>
+				<li><a href="#Stats">Stats</a></li>
+				<li><a href="#Loot">Loot</a></li>
+				<li><a href="#Lore">Lore</a></li>
+				<li><a href="#History">History</a></li>
+				<li><a href="#Gallery">Gallery</a></li>
+				<li><a href="#Trivia">Trivia</a></li>
+			</ol>
+		</section>
+		<hr>
+		<h2 id="Stats">Stats</h2>		
+		<table style="min-width: 40%">
+			<tbody>
+				<tr>
+					<th colspan="2"><h3>Advanced Stats</h3></th>
+				</tr>				
+				<tr>
+					<th>Mobility</th>
+					<td>100<span class="unit">%</span></td>
+				</tr>
+				<tr>
+					<th>Equip Delay</th>
+					<td>0.1875<span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Reload Type</th>
+					<td>Magazine</td>
+				</tr>
+				<tr>
+					<th>Reload Replenish Time</th>
+					<td>1.08<span style="text-decoration: overline">3</span><span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Reload Finish Time</th>
+					<td>2<span class="unit">sec</span></td>
+				</tr>
+				<tr>
+					<th>Muzzle Velocity</th>
+					<td>350<span class="unit">m/sec</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Mass</th>
+					<td>0.005<span class="unit">kg</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Damage Falloff Start Distance</th>
+					<td>16<span class="unit">m</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Damage Falloff End Distance</th>
+					<td>128<span class="unit">m</span></td>
+				</tr>
+				<tr>
+					<th>Projectile Damage Falloff Percentage</th>
+					<td>-50<span class="unit">%</span></td>
+				</tr>
+				<tr>
+					<th>Recoil Strength</th>
+					<td>24</td>
+				</tr>
+				<tr>
+					<th>Recoil Strength Increase</th>
+					<td>0</td>
+				</tr>
+				<tr>
+					<th>Recoil Predictability</th>
+					<td>50<span class="unit">%</span></td>
+				</tr>
+				<tr>
+					<th>Hip Spread Angle</th>
+					<td>1.64<span class="unit">&deg;</span></td>
+				</tr>
+				<tr>
+					<th>ADS Spread Angle</th>
+					<td>0.25<span class="unit">&deg;</span></td>
+				</tr>
+				<tr>
+					<th colspan="2"><h3>Technicalities</h3></th>
+				</tr>
+				<tr>
+					<th>Internal Name</th>
+					<td><code>hg_n3</code></td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<h2 id="Loot">Loot</h2>
+		<p>The N3 Maki can be generally found in all spots of loot.</p>
+		<hr>
+		<h2 id="Lore">Lore</h2>
+		<p>The N3 Maki is manufactured by Maki Industries.</p>
+		<hr>
+		<h2 id="History">History</h2>
+		<table class="changelog" border="1">
+			<tbody>
+				<tr>
+					<th>Date</th>
+					<th>Version</th>
+					<th>Info</th>
+				</tr>
+				<tr>
+					<td>5/11/2024</td>
+					<td>Pre-Alpha</td>
+					<td>This weapon has become documented in this wiki.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<h2 id="Gallery">Gallery</h2>
+		<hr>
+		<h2 id="Trivia">Trivia</h2>
+		<ul>
+			<li>N3 Maki is the first pistol to be added to the game (7/16/2023; according to its .blend file's creation date).</li>
+			<li>N3 Maki's model is likely inspired by <a href="https://en.wikipedia.org/wiki/Beretta_M9" target="_blank">Beretta M9</a>.</li>
+		</ul>
+	</body>	
+</html>
