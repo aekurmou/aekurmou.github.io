@@ -35,9 +35,9 @@
 			
 				now = new Date()
 
-				utcDate = new Date(now.toISOString().replace('T', ' ').split('.')[0])
+				utcDate = new Date(now.toISOString().replace('T', ' ').split('.')[0] + '.' + now.getMilliseconds())
 				
-				const ageStr = calcAge(bDate, now).toFixed(12)
+				const ageStr = calcAge(bDate, utcDate).toFixed(12)
 				
 				const ageStrs = ageStr.split(".")
 				
