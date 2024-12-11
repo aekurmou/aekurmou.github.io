@@ -35,7 +35,7 @@
 			
 				now = new Date()
 
-				utcDate = new Date(now.toISOString().replace('T', ' ').split('.')[0] + '.' + now.getMilliseconds())
+				utcDate = new Date(now.toISOString().replace('T', ' ').split('.')[0] + '.' + String(now.getMilliseconds()).padStart(3, '0'))
 				
 				const ageStr = calcAge(bDate, utcDate).toFixed(12)
 				
