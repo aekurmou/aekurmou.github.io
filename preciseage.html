@@ -27,15 +27,17 @@
 		<script src="agecalc.js"></script>
 		<script>
 			agecounterint = document.getElementById("agecounterint")
-			agecounterfrac = document.getElementById("agecounterfrac")			
+			agecounterfrac = document.getElementById("agecounterfrac")		
+
+			const bDate = new Date('2004-12-17T00:00:00')
 			
 			updateAgeCounter = function() {
 			
-				now = new Date();
+				now = new Date()
 
-				utcDate = now.toISOString().replace('T', ' ').split('.')[0];
+				utcDate = new Date(now.toISOString().replace('T', ' ').split('.')[0])
 				
-				const ageStr = calcAge(new Date('2004-12-17T00:00:00'), new Date()).toFixed(12)
+				const ageStr = calcAge(bDate, now).toFixed(12)
 				
 				const ageStrs = ageStr.split(".")
 				
