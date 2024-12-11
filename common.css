@@ -142,7 +142,7 @@ nav > a:active {
 	border: 2px solid var(--c0);
 }
 .gallery > div {
-	max-width: 300px;
+	border: 2px solid var(--c0);
 	margin: 10px;
 	padding: 10px;
 }

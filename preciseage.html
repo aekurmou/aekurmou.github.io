@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>aekur.xyz ~ precise age</title>
+		<link href="common.css" rel="stylesheet">
+		<link href="font_import.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<img src="silly_aekur.webp" height="90px">
+				<span><span style="color: var(--c1)">ækur</span>.xyz</span>
+			</div>
+		</header>		
+		<nav>
+			<a href="index.html">index</a>
+			<a href="preciseage.html">precise age</a>
+		</nav>
+		<main>
+			<p>aekur is actually</p>
+			<p><span id="agecounterint" style="font-family: monospace; font-size: 120pt; color: #ffffff">?</span><span id="agecounterfrac" style="font-family: monospace; font-size: 60pt; color: #ffffff">?</span></p>
+			<p>years old!</p>
+			<p><b style="color: #eeffff">note: this assumes that my birth date's hour, minute, and second are all 0, and the current date used for calculation uses the UTC+0 timezone.</b></p>
+		</main>
+		<script src="agecalc.js"></script>
+		<script>
+			agecounterint = document.getElementById("agecounterint")
+			agecounterfrac = document.getElementById("agecounterfrac")			
+			
+			updateAgeCounter = function() {
+			
+				now = new Date();
+
+				utcDate = now.toISOString().replace('T', ' ').split('.')[0];
+				
+				const ageStr = calcAge(new Date('2004-12-17T00:00:00'), new Date()).toFixed(12)
+				
+				const ageStrs = ageStr.split(".")
+				
+				let ageStrInt = ageStrs[0];
+				let ageStrFrac = "." + ageStrs[1];
+				
+				agecounterint.innerHTML = ageStrInt;
+				agecounterfrac.innerHTML = ageStrFrac;				
+			}
+			
+			setInterval(updateAgeCounter, 4)
+		</script>
+	</body>
+</html>
