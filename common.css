@@ -1,20 +1,28 @@
 /* import font */
 @font-face {
-    font-family: 'Roboto';
-    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+    font-family: 'CascadiaMono';
+    src: url('fonts/CascadiaMono.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
+/*@font-face {
     font-family: 'Roboto';
     src: url('fonts/Roboto-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
-}
+}*/
 
 /* general */
 :root {
-	--c0: #c0c0c0;
+	background-image: url('bg.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	--c0: #FFFFFF;/*#c0c0c0;*/
+	--c0s: #c0c0c0;
+	
+	--cdivbg: #000000C0;
+	--cdivbd: #FFFFFFFF;
 	
 	--c1: #9EB5D8;
 	--c2: #D69ED0;
@@ -26,8 +34,13 @@
 	--c3s: #FFC674;
 	--c4s: #74FF83;
 	
-	font-family: 'Roboto';
-	background-color: #000000;
+	--cR: #FF006E;
+	--cG: #00FF21;
+	--cB: #0072FF;
+	--cY: #FFD800;
+	
+	font-family: 'CascadiaMono';
+	background-color: #9999FF;
 	color: var(--c0);
 	
 	transition: opacity 250ms;
@@ -38,6 +51,7 @@ body {
 body > header {
 	animation: animScale 0.5s ease-out forwards;
 }
+
 @keyframes animOpacity {
 	from {
 		opacity: 0.25;
@@ -88,23 +102,37 @@ a:active {
 	transform: scale(0.9);
 }
 
-main {	
+main, nav {
 	margin: 0 auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	
-	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	
 	max-width: 800px;
+	
+	background-color: var(--cdivbg);
+	border-radius: 20px;
+	border: 2px solid var(--cdivbd);
+	
+	padding: 30px;
+}
+
+main {	
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+	text-align: center;
 }
 
 nav {
 	display: flex;
 	justify-content: center;
 	
+	padding: 1px;
+	
 	/*border: 2px solid var(--c0);*/
 	
 }
+
 nav > a {
 	
 	font-weight: bold;
@@ -120,7 +148,7 @@ nav > a {
 	
 	border: 2px solid var(--c1s);
 	color: white;
-	min-width: 120px;
+	min-width: 150px;
 	
 	transition: border 150ms;
 }
@@ -133,27 +161,76 @@ nav > a:active {
 	color: white;
 }
 
-/* art */
-.gallery {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	
-	border: 2px solid var(--c0);
+ul {
+	display: inline-block;
+	list-style: none; /* Remove default bullets */
+	padding-left: 1em; /* Optional: Add space for the custom symbol */
 }
-.gallery > div {
-	border: 2px solid var(--c0);
-	margin: 10px;
+ul.positive li::before {
+	content: "+";      /* Add the + symbol */
+	margin-right: 0.5em;
+	font-weight: bold; /* Make only the + bold */
+	color: var(--cG);
+}
+ul.positive li {
+	color: var(--cG);
+}
+ul.negative li::before {
+	content: "-";      /* Add the + symbol */
+	margin-right: 0.5em;
+	font-weight: bold; /* Make only the + bold */
+	color: var(--cR);
+}
+ul.negative li {
+	color: var(--cR);
+}
+
+table {
+	margin: 30px auto;
+	
+	font-size: 24pt;
+	
+	background-color: var(--cdivbg);
+	border-radius: 20px;
+	
+	/*border: 1px dashed white;*/
+}
+table {
+	margin: 30px auto;
+	
+	font-size: 16pt;
+	
+	background-color: var(--cdivbg);
+	border-radius: 20px;
+	
+	/*border: 1px dashed white;*/
+}
+table > tbody > tr > th {
 	padding: 10px;
 }
-.gallery-imgbox {
-	border: 2px solid white;
-	display: flex;
-	justify-content: center;
+table > tbody > tr > td {
+	padding: 10px;
 }
-.gallery-imgbox > img {
-	max-width: 300px;
-	max-height: 200px;
-	display:block;
-    margin:auto;
+table.prices > tbody > tr > th {
+	font-size: 18pt;
+}
+table.prices > tbody > tr > td {
+	font-size: 24pt;
+}
+
+.unavail {
+	color: gray; /* Change text color to gray */
+	position: relative; /* Needed for absolute positioning of the line */
+}
+
+.unavail::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--cR); /* Red line */
+	transform: translateY(-50%);
+	pointer-events: none; /* So the line doesn't interfere with clicks */
 }
