@@ -186,6 +186,8 @@ ul.negative li {
 }
 
 table {
+	display: inline-block;
+	
 	margin: 30px auto;
 	
 	font-size: 24pt;
