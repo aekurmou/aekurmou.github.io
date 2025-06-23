@@ -102,6 +102,18 @@ a:active {
 	transform: scale(0.9);
 }
 
+.box {
+	display: inline-block;
+	
+	margin: 0 auto;
+	
+	background-color: var(--cdivbg);
+	border-radius: 20px;
+	border: 2px solid var(--cdivbd);
+	
+	padding: 10px;
+}
+
 main, nav {
 	margin: 0 auto;
 	margin-top: 10px;
@@ -176,13 +188,25 @@ ul.positive li {
 	color: var(--cG);
 }
 ul.negative li::before {
-	content: "-";      /* Add the + symbol */
+	content: "-";
 	margin-right: 0.5em;
-	font-weight: bold; /* Make only the + bold */
+	font-weight: bold;
 	color: var(--cR);
 }
 ul.negative li {
 	color: var(--cR);
+}
+ul.unconfident li::before {
+	content: "?";
+	margin-right: 0.5em;
+	font-weight: bold;
+	color: var(--cY);
+}
+ul.unconfident li {
+	color: var(--cY);
+}
+ul > caption {
+	font-weight: bold;
 }
 
 table {
@@ -235,4 +259,8 @@ table.prices > tbody > tr > td {
 	background-color: var(--cR); /* Red line */
 	transform: translateY(-50%);
 	pointer-events: none; /* So the line doesn't interfere with clicks */
+}
+
+strong {
+	color: var(--cY);
 }
