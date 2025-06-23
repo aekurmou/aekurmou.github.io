@@ -1,0 +1,266 @@
+/* import font */
+@font-face {
+    font-family: 'CascadiaMono';
+    src: url('fonts/CascadiaMono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/*@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}*/
+
+/* general */
+:root {
+	background-image: url('bg.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	--c0: #FFFFFF;/*#c0c0c0;*/
+	--c0s: #c0c0c0;
+	
+	--cdivbg: #000000C0;
+	--cdivbd: #FFFFFFFF;
+	
+	--c1: #9EB5D8;
+	--c2: #D69ED0;
+	--c3: #D6BF9E;
+	--c4: #9ED6A4;
+	
+	--c1s: #72ACFF;
+	--c2s: #FF74F1;
+	--c3s: #FFC674;
+	--c4s: #74FF83;
+	
+	--cR: #FF006E;
+	--cG: #00FF21;
+	--cB: #0072FF;
+	--cY: #FFD800;
+	
+	font-family: 'CascadiaMono';
+	background-color: #9999FF;
+	color: var(--c0);
+	
+	transition: opacity 250ms;
+}
+body {
+	animation: animOpacity 0.5s ease-out forwards;
+}
+body > header {
+	animation: animScale 0.5s ease-out forwards;
+}
+
+@keyframes animOpacity {
+	from {
+		opacity: 0.25;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes animScale {
+	from {
+		transform: scale(0.95);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+a {
+	color: var(--c1s);
+}
+a:hover {
+	color: var(--c2s);
+}
+a:active {
+	color: var(--c4s);
+}
+
+.logo {
+	text-align: center;
+	display: block;
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.logo > * {
+	vertical-align: middle;
+	color: #ffffff;
+	font-size: 60px;
+	font-weight: bold;
+	
+	transition: transform 150ms;
+}
+.logo > *:hover {	
+	transform: scale(1.1);
+}
+
+.logo > *:active {	
+	transform: scale(0.9);
+}
+
+.box {
+	display: inline-block;
+	
+	margin: 0 auto;
+	
+	background-color: var(--cdivbg);
+	border-radius: 20px;
+	border: 2px solid var(--cdivbd);
+	
+	padding: 10px;
+}
+
+main, nav {
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+	max-width: 800px;
+	
+	background-color: var(--cdivbg);
+	border-radius: 20px;
+	border: 2px solid var(--cdivbd);
+	
+	padding: 30px;
+}
+
+main {	
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+	text-align: center;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	
+	padding: 1px;
+	
+	/*border: 2px solid var(--c0);*/
+	
+}
+
+nav > a {
+	
+	font-weight: bold;
+	text-decoration: none;
+	
+	margin: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	
+	padding: 5px;
+
+	text-align: center;
+	
+	border: 2px solid var(--c1s);
+	color: white;
+	min-width: 150px;
+	
+	transition: border 150ms;
+}
+nav > a:hover {	
+	border: 2px solid var(--c2s);
+	color: white;
+}
+nav > a:active {	
+	border: 2px solid var(--c4s);
+	color: white;
+}
+
+ul {
+	display: inline-block;
+	list-style: none; /* Remove default bullets */
+	padding-left: 1em; /* Optional: Add space for the custom symbol */
+}
+ul.positive li::before {
+	content: "+";      /* Add the + symbol */
+	margin-right: 0.5em;
+	font-weight: bold; /* Make only the + bold */
+	color: var(--cG);
+}
+ul.positive li {
+	color: var(--cG);
+}
+ul.negative li::before {
+	content: "-";
+	margin-right: 0.5em;
+	font-weight: bold;
+	color: var(--cR);
+}
+ul.negative li {
+	color: var(--cR);
+}
+ul.unconfident li::before {
+	content: "?";
+	margin-right: 0.5em;
+	font-weight: bold;
+	color: var(--cY);
+}
+ul.unconfident li {
+	color: var(--cY);
+}
+ul > caption {
+	font-weight: bold;
+}
+
+table {
+	display: inline-block;
+	
+	margin: 30px auto;
+	
+	font-size: 24pt;
+	
+	background-color: var(--cdivbg);
+	border-radius: 20px;
+	
+	/*border: 1px dashed white;*/
+}
+table {
+	margin: 30px auto;
+	
+	font-size: 16pt;
+	
+	background-color: var(--cdivbg);
+	border-radius: 20px;
+	
+	/*border: 1px dashed white;*/
+}
+table > tbody > tr > th {
+	padding: 10px;
+}
+table > tbody > tr > td {
+	padding: 10px;
+}
+table.prices > tbody > tr > th {
+	font-size: 18pt;
+}
+table.prices > tbody > tr > td {
+	font-size: 24pt;
+}
+
+.unavail {
+	color: gray; /* Change text color to gray */
+	position: relative; /* Needed for absolute positioning of the line */
+}
+
+.unavail::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--cR); /* Red line */
+	transform: translateY(-50%);
+	pointer-events: none; /* So the line doesn't interfere with clicks */
+}
+
+strong {
+	color: var(--cY);
+}
