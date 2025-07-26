@@ -4,53 +4,243 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>aekur.xyz</title>
-		<link href="common.css" rel="stylesheet">
-		<link href="font_import.css" rel="stylesheet">
+		<link href="../common.css" rel="stylesheet">
+		<link href="../font_import.css" rel="stylesheet">
+		<style>
+			.hidden {
+				display: none;
+			}
+			.mature {
+				color: #ffbbdd;
+			}
+		</style>
 	</head>
 	<body>
 		<header>
 			<div class="logo">
-				<img src="silly_aekur.webp" height="90px">
+				<img src="../silly_aekur.webp" height="90px">
 				<span><span style="color: var(--c1)">ækur</span>.xyz</span>
 			</div>
 		</header>
 		<nav>
-			<a href="index.html">index</a>
-			<a href="preciseage.html">precise age</a>
-			<a href="convert/hub.html">convert town</a>
-			<a href="artcomm/index.html">art comm β</a>
+			<a href="../index.html">index</a>
+			<a href="../preciseage.html">precise age</a>
+			<a href="../convert/hub.html">convert town</a>
+			<a href="index.html">art comm</a>
 		</nav>
 		<main>
-			<p>genderfluid; bisexual; he/any</p>
-			<p>luna-polyphemus moth hybrid</p>
-			<p>artist, programmer (C#), game developer, somewhat knowledgeable in math</p>
-			<p>an absolute moth enjoyer</p>
-			<p>
-				(bluesky)
-				<a href="https://bsky.app/profile/aekur.xyz" target="_blank">aekur.xyz</a>
-			</p>
-			<p>
-				(twitter)
-				<a href="https://twitter.com/aekurmou" target="_blank">aekurmou</a>
-			</p>
-			<p>
-				(youtube)
-				<a href="https://www.youtube.com/channel/UC9pTq7yagueH7k8mPVJv-Sw" target="_blank">aekurmou</a>
-			</p>
-			<p>
-				(github)
-				<a href="https://github.com/aekurmou" target="_blank">aekurmou</a>
-			</p>
-			<p>
-				(itch.io)
-				<a href="https://aekurmou.itch.io" target="_blank">aekurmou</a>
-			</p>
-			<p>
-				<b style="color: #eeffff">
-					if you enjoy my works and/or are willing to support me financially, refer to my 
-					<a href="https://ko-fi.com/aekurmou" target="_blank">ko-fi page</a>.
-				</b>
-			</p>
+			<h1>Art Commission <span style="font-family: serif">&gamma;</span></h1>			
+			<img src="commshee_visual.png" width="500px">
+			<br>
+			<p><a id="matureModeToggler" href="javascript:void(0)" onclick="toggleMatureMode(event); return false;">Enable mature mode</a></p>
+			<table class="prices">
+				<caption>Prices (USD)</caption>
+				<tbody>
+					<tr>
+						<th>HEAD</th>
+						<td id="price_head">20</td>
+					</tr>
+					<tr>
+						<th>HALF</th>
+						<td id="price_half">30</td>
+					</tr>
+					<tr>
+						<th>FULL</th>
+						<td id="price_full">32</td>
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<caption>Modifiers</caption>
+				<tbody>
+					<tr>
+						<th>Modifier</th>
+						<th>Multiplier Increment</th>
+					</tr>
+					<tr>
+						<td>Background</td>
+						<td id="modifier_bg">+12.5%</td>
+					</tr>
+					<tr>
+						<td>Non-bug<sup>[1][2]</sup></td>
+						<td id="modifier_nonbug">+5%</td>
+					</tr>
+					<tr>
+						<td>Complex Pose</td>
+						<td id="modifier_complexpose">+20%</td>
+					</tr>
+					<tr>
+						<td>Extra Character<sup>[3]</sup></td>
+						<td id="modifier_extrachar">+75%</td>
+					</tr>
+					<tr class="mature">
+						<td>Suggestive<sup>[4]</sup></td>
+						<td id="modifier_bsfw">+10%</td>
+					</tr>
+					<tr class="mature">
+						<td>NSFW<sup>[4]</sup></td>
+						<td id="modifier_nsfw">+30%</td>
+					</tr>
+				</tbody>
+			</table>
+			<ul style="font-size: 8pt">
+				<li><sup>[1]</sup>See <a href="#Circumstances">Circumstances</a></li>
+				<li><sup>[2]</sup>Insects and arachnids are considered bugs. Hybrids that contain a bug species are counted as bugs.</li>
+				<li><sup>[3]</sup>Max limit of 2 characters.</li>
+				<li class="mature"><sup>[4]</sup>Only for adult (18+) clients. These modifiers are applied exclusively.</li>
+			</ul>
+			<br><br>
+			<div id="price_calc" style="display: none;" class="box"><!--PRICE CALC-->
+				<h3>Price Calculator</h3>
+				<p>
+					<select id="price_calc_in_base" onchange="priceCalculatorRun()">
+						<option value="" disabled selected>Select Base Price</option>
+						<option value="head">HEAD</option>
+						<option value="half">HALF</option>
+						<option value="full">FULL</option>
+					</select>
+				</p>
+				<p>
+					<label for="price_calc_in_modifier_bg">Background</label>
+					<input type="checkbox" id="price_calc_in_modifier_bg" onchange="priceCalculatorRun()">
+					<label for="price_calc_in_modifier_nonbug">Non-bug</label>
+					<input type="checkbox" id="price_calc_in_modifier_nonbug" onchange="priceCalculatorRun()">
+					<br><label for="price_calc_in_modifier_complexpose">Complex Pose</label>
+					<input type="checkbox" id="price_calc_in_modifier_complexpose" onchange="priceCalculatorRun()">
+					<br><label for="price_calc_in_modifier_extrachar">Character Count:</label>
+					<input type="number" id="price_calc_in_modifier_extrachar" min="1" max="2" step="1" value="1" onchange="priceCalculatorRun()">
+					<span class="mature">
+						<br><label for="price_calc_in_modifier_agerating">Appropriateness:</label>
+						<select id="price_calc_in_modifier_agerating" onchange="priceCalculatorRun()">
+							<option value="sfw" selected>SFW</option>
+							<option value="bsfw">Suggestive</option>
+							<option value="nsfw">NSFW</option>
+						</select>
+					</span>
+				</p>
+				<p><div id="price_calc_out_price" class="box" style="font-size: 24pt">?</div></p>
+			</div>
+			<noscript>
+				<p>Enable JavaScript if you want to use the price calculator.</p>
+			</noscript>
+			<br><br>
+			<h2>Preferences</h2>
+			<ul class="positive">
+				<caption>Positive</caption>
+				<li>Anthro bugs</li>
+				<li>Simple firearms</li>
+				<li>Light gore<sup>[1][2]</sup></li>
+				<li class="mature">Suggestive<sup>[4]</sup></li>
+				<li class="mature">NSFW<sup>[4]</sup></li>
+			</ul>
+			<ul class="unconfident">
+				<caption>Unconfident</caption>
+				<li>Heavy gore</li>
+				<li>Non-bugs<sup>[3]</sup></li>
+			</ul>
+			<ul class="negative">
+				<caption>Negative</caption>
+				<li>Extreme detail</li>
+				<li>Feral</li>
+				<li>Fetish</li>
+				<li>Hate art</li>
+				<li>Mecha</li>
+				<li>Canine snout<sup>[3]</sup></li>
+			</ul><br>
+			<ul style="font-size: 8pt">
+				<li><sup>[1]</sup>I have not done this but am willing to draw the feature.</li>
+				<li><sup>[2]</sup>This may cause the work to be considered sensitive/suggestive.</li>
+				<li><sup>[3]</sup>See <a href="#Circumstances">Circumstances</a></li>
+				<li class="mature"><sup>[4]</sup>Only for adult (18+) clients.</li>
+			</ul>			
+			<p>If you have any questions, feel free to ask!</p>
+			
+			<h1 id="ToS">Terms of Service</h1>
+			<p>I reserve the right to deny or cancel any commission if I deem it to be beyond my capabilities or inappropriate. The client will be refunded just in case.</p>
+			<p>I still hold rights to the commissioned piece, such as using them as sample images for future commission sessions.</p>
+			<p>All revisions of the piece are heavily watermarked until the client has paid and the commission is complete.</p>
+			<p>Payment is processed through Ko-Fi only.</p>
+			<p>You may not use my work for commercial purposes.</p>
+			<p>You may not remove my watermark and signature.</p>
+			<p class="mature">You may commission as an NSFW account, however the commissioned work may not be presented in my main account due to its 13+ audience. If your commission includes suggestive or NSFW elements, only my appropriate mature account (suggestive and NSFW separately) is used for handling conversations and presenting commissioned work.</p>
+			<p>To protect ourselves from an unjust policy established by payment processors to target queer <span class="mature">and NSFW </span>content, do not directly mention anything that could trigger them<span class="mature">, especially NSFW,</span> when making payments.</p>
+			
+			<h1 id="Circumstances">Circumstances</h1>
+			<p><strong>I am neurodivergent and may forget about commissions, so don't hesitate to remind me about it. Turnaround time may vary depending on my situation.</strong></p>
+			<p>Midnight (CDT) is my most active time of a day.</p>
+			<p>Due to my selectiveness on drawing species, <strong>non-bugs have a +5% fee</strong>.</p>
+			
+			<br><br>
+
+			<p>To claim a slot, DM me in <a href="https://twitter.com/aekurmou" target="_blank">Twitter</a>, <a href="https://bsky.app/profile/aekur.xyz" target="_blank">Bluesky</a>, or Discord. Do not send a simple "Hi" or "Hello," as I assume these do not have anything to discuss and then ignore. <strong>Payment is not upfront; The client must wait until told to initiate payment.</strong> Once you and I have completely described the work, I send a very rough sketch, and you agree, pay via <a href="https://ko-fi.com/aekurmou" target="_blank">Ko-fi</a> before I continue. You can withdraw your slot at any time until payment.</p>
 		</main>
+		<script>
+			function toggleMatureMode() {
+				const elements = document.querySelectorAll('.mature');
+
+				let isHidden = Array.from(elements).every(el => el.classList.contains('hidden'));
+
+				elements.forEach(el => {
+					if (isHidden) {
+						el.classList.remove('hidden');
+					} else {
+						el.classList.add('hidden');
+					}
+				});
+
+				const link = document.getElementById('matureModeToggler');
+				matureModeToggler.textContent = isHidden ? 'Hide mature information' : 'Show mature information';
+			}
+			toggleMatureMode()
+			function priceCalculatorRun() {
+				const price_calc_out_price = document.getElementById('price_calc_out_price');
+				
+				try {
+					let price = 0
+					
+					// get price from base
+					const price_calc_in_base = document.getElementById('price_calc_in_base')
+					price += parseFloat(document.getElementById('price_' + price_calc_in_base.value).innerHTML)
+					
+					// modifiers
+					let modifierInc = 0.0
+					
+					const price_calc_in_modifier_bg = document.getElementById('price_calc_in_modifier_bg')
+					if (price_calc_in_modifier_bg.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_bg').innerHTML)
+					
+					const price_calc_in_modifier_nonbug = document.getElementById('price_calc_in_modifier_nonbug')
+					if (price_calc_in_modifier_nonbug.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_nonbug').innerHTML)
+					
+					const price_calc_in_modifier_complexpose = document.getElementById('price_calc_in_modifier_complexpose')
+					if (price_calc_in_modifier_complexpose.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_complexpose').innerHTML)
+					
+					const price_calc_in_modifier_extrachar = document.getElementById('price_calc_in_modifier_extrachar')
+					modifierInc += 0.01 * parseFloat(document.getElementById('modifier_extrachar').innerHTML) * (price_calc_in_modifier_extrachar.value - 1)
+					
+					const price_calc_in_modifier_agerating = document.getElementById('price_calc_in_modifier_agerating')
+					switch (price_calc_in_modifier_agerating.value) {
+						case "sfw":
+							break
+						case "bsfw":
+							modifierInc += 0.01 * parseFloat(document.getElementById('modifier_bsfw').innerHTML)
+							break
+						case "nsfw":
+							modifierInc += 0.01 * parseFloat(document.getElementById('modifier_nsfw').innerHTML)
+							break
+					}
+					
+					price *= 1.0 + modifierInc;
+					
+					// round price
+					price = (Math.ceil(price * 100) / 100).toFixed(2)
+					
+					price_calc_out_price.innerHTML = price
+				}
+				catch {
+					price_calc_out_price.innerHTML = 'Error'
+				}
+			}
+			document.getElementById('price_calc').style.display = 'inline-block'
+		</script>
 	</body>
 </html>
