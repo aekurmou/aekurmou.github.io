@@ -26,35 +26,27 @@
 			<a href="../index.html">index</a>
 			<a href="../preciseage.html">precise age</a>
 			<a href="../convert/hub.html">convert town</a>
-			<a href="index.html">art comm β</a>
+			<a href="index.html">art comm</a>
 		</nav>
 		<main>
-			<h1>Art Commission <span style="font-family: serif">&beta;</span></h1>			
+			<h1>Art Commission <span style="font-family: serif">&gamma;</span></h1>			
 			<img src="commshee_visual.png" width="500px">
 			<br>
 			<p><a id="matureModeToggler" href="javascript:void(0)" onclick="toggleMatureMode(event); return false;">Enable mature mode</a></p>
 			<table class="prices">
-				<caption>Prices</caption>
+				<caption>Prices (USD)</caption>
 				<tbody>
 					<tr>
-						<th>USD</th>
-						<th>Flat</th>
-						<th>Finish</th>
-					</tr>
-					<tr>
 						<th>HEAD</th>
-						<td id="price_head_flat">15</td>
-						<td id="price_head_finish">18</td>
+						<td id="price_head">20</td>
 					</tr>
 					<tr>
 						<th>HALF</th>
-						<td id="price_half_flat">20</td>
-						<td id="price_half_finish">24</td>
+						<td id="price_half">30</td>
 					</tr>
 					<tr>
 						<th>FULL</th>
-						<td id="price_full_flat">25</td>
-						<td id="price_full_finish">30</td>
+						<td id="price_full">32</td>
 					</tr>
 				</tbody>
 			</table>
@@ -66,6 +58,10 @@
 						<th>Multiplier Increment</th>
 					</tr>
 					<tr>
+						<td>Background</td>
+						<td id="modifier_bg">+12.5%</td>
+					</tr>
+					<tr>
 						<td>Non-bug<sup>[1][2]</sup></td>
 						<td id="modifier_nonbug">+5%</td>
 					</tr>
@@ -75,7 +71,7 @@
 					</tr>
 					<tr>
 						<td>Extra Character<sup>[3]</sup></td>
-						<td id="modifier_extrachar">+80%</td>
+						<td id="modifier_extrachar">+75%</td>
 					</tr>
 					<tr class="mature">
 						<td>Suggestive<sup>[4]</sup></td>
@@ -99,15 +95,14 @@
 				<p>
 					<select id="price_calc_in_base" onchange="priceCalculatorRun()">
 						<option value="" disabled selected>Select Base Price</option>
-						<option value="head_flat">HEAD Flat</option>
-						<option value="head_finish">HEAD Finish</option>
-						<option value="half_flat">HALF Flat</option>
-						<option value="half_finish">HALF Finish</option>
-						<option value="full_flat">FULL Flat</option>
-						<option value="full_finish">FULL Finish</option>
+						<option value="head">HEAD</option>
+						<option value="half">HALF</option>
+						<option value="full">FULL</option>
 					</select>
 				</p>
 				<p>
+					<label for="price_calc_in_modifier_bg">Background</label>
+					<input type="checkbox" id="price_calc_in_modifier_bg" onchange="priceCalculatorRun()">
 					<label for="price_calc_in_modifier_nonbug">Non-bug</label>
 					<input type="checkbox" id="price_calc_in_modifier_nonbug" onchange="priceCalculatorRun()">
 					<br><label for="price_calc_in_modifier_complexpose">Complex Pose</label>
@@ -168,6 +163,7 @@
 			<p>You may not use my work for commercial purposes.</p>
 			<p>You may not remove my watermark and signature.</p>
 			<p class="mature">You may commission as an NSFW account, however the commissioned work may not be presented in my main account due to its 13+ audience. If your commission includes suggestive or NSFW elements, only my appropriate mature account (suggestive and NSFW separately) is used for handling conversations and presenting commissioned work.</p>
+			<p>To protect ourselves from an unjust policy established by payment processors to target queer <span class="mature">and NSFW </span>content, do not directly mention anything that could trigger them<span class="mature">, especially NSFW,</span> when making payments.</p>
 			
 			<h1 id="Circumstances">Circumstances</h1>
 			<p><strong>I am neurodivergent and may forget about commissions, so don't hesitate to remind me about it. Turnaround time may vary depending on my situation.</strong></p>
@@ -208,6 +204,9 @@
 					
 					// modifiers
 					let modifierInc = 0.0
+					
+					const price_calc_in_modifier_bg = document.getElementById('price_calc_in_modifier_bg')
+					if (price_calc_in_modifier_bg.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_bg').innerHTML)
 					
 					const price_calc_in_modifier_nonbug = document.getElementById('price_calc_in_modifier_nonbug')
 					if (price_calc_in_modifier_nonbug.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_nonbug').innerHTML)
