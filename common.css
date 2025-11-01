@@ -196,13 +196,13 @@ ul.negative li::before {
 ul.negative li {
 	color: var(--cR);
 }
-ul.unconfident li::before {
+ul.inconfident li::before {
 	content: "?";
 	margin-right: 0.5em;
 	font-weight: bold;
 	color: var(--cY);
 }
-ul.unconfident li {
+ul.inconfident li {
 	color: var(--cY);
 }
 ul > caption {
