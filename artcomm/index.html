@@ -29,8 +29,9 @@
 			<a href="index.html">art comm</a>
 		</nav>
 		<main>
-			<h1>Art Commission <span style="font-family: serif">&gamma;</span></h1>			
-			<img src="commshee_visual.png" width="500px">
+			<h1>Art Commission <span style="font-family: serif">&delta;</span></h1>			
+			<img src="commshee_visual.png" width="600px">
+			<p style="font-size: 8pt">Keep in mind that the character shown above was drawn in 5-head proportions, and I recently began moving to 6-head proportions.</p>
 			<br>
 			<p><a id="matureModeToggler" href="javascript:void(0)" onclick="toggleMatureMode(event); return false;">Enable mature mode</a></p>
 			<table class="prices">
@@ -38,15 +39,15 @@
 				<tbody>
 					<tr>
 						<th>HEAD</th>
-						<td id="price_head">20</td>
+						<td id="price_head">24</td>
 					</tr>
 					<tr>
 						<th>HALF</th>
-						<td id="price_half">30</td>
+						<td id="price_half">36</td>
 					</tr>
 					<tr>
 						<th>FULL</th>
-						<td id="price_full">32</td>
+						<td id="price_full">40</td>
 					</tr>
 				</tbody>
 			</table>
@@ -58,8 +59,12 @@
 						<th>Multiplier Increment</th>
 					</tr>
 					<tr>
+						<td>Shading</td>
+						<td id="modifier_shading">+10%</td>
+					</tr>
+					<tr>
 						<td>Background</td>
-						<td id="modifier_bg">+12.5%</td>
+						<td id="modifier_bg">+25%</td>
 					</tr>
 					<tr>
 						<td>Non-bug<sup>[1][2]</sup></td>
@@ -71,7 +76,7 @@
 					</tr>
 					<tr>
 						<td>Extra Character<sup>[3]</sup></td>
-						<td id="modifier_extrachar">+75%</td>
+						<td id="modifier_extrachar">+50%</td>
 					</tr>
 					<tr class="mature">
 						<td>Suggestive<sup>[4]</sup></td>
@@ -101,6 +106,8 @@
 					</select>
 				</p>
 				<p>
+					<label for="price_calc_in_modifier_shading">Shading</label>
+					<input type="checkbox" id="price_calc_in_modifier_shading" onchange="priceCalculatorRun()">
 					<label for="price_calc_in_modifier_bg">Background</label>
 					<input type="checkbox" id="price_calc_in_modifier_bg" onchange="priceCalculatorRun()">
 					<label for="price_calc_in_modifier_nonbug">Non-bug</label>
@@ -128,13 +135,13 @@
 			<ul class="positive">
 				<caption>Positive</caption>
 				<li>Anthro bugs</li>
-				<li>Simple firearms</li>
+				<li>Simple weapons</li>
 				<li>Light gore<sup>[1][2]</sup></li>
 				<li class="mature">Suggestive<sup>[4]</sup></li>
 				<li class="mature">NSFW<sup>[4]</sup></li>
 			</ul>
-			<ul class="unconfident">
-				<caption>Unconfident</caption>
+			<ul class="inconfident">
+				<caption>Inconfident</caption>
 				<li>Heavy gore</li>
 				<li>Non-bugs<sup>[3]</sup></li>
 			</ul>
@@ -158,21 +165,22 @@
 			<h1 id="ToS">Terms of Service</h1>
 			<p>I reserve the right to deny or cancel any commission if I deem it to be beyond my capabilities or inappropriate. The client will be refunded just in case.</p>
 			<p>I still hold rights to the commissioned piece, such as using them as sample images for future commission sessions.</p>
-			<p>All revisions of the piece are heavily watermarked until the client has paid and the commission is complete.</p>
+			<p>All revisions of the piece are heavily watermarked or screenshotted in suboptimal quality until the client has paid.</p>
 			<p>Payment is processed through Ko-Fi only.</p>
 			<p>You may not use my work for commercial purposes.</p>
 			<p>You may not remove my watermark and signature.</p>
 			<p class="mature">You may commission as an NSFW account, however the commissioned work may not be presented in my main account due to its 13+ audience. If your commission includes suggestive or NSFW elements, only my appropriate mature account (suggestive and NSFW separately) is used for handling conversations and presenting commissioned work.</p>
-			<p>To protect ourselves from an unjust policy established by payment processors to target queer <span class="mature">and NSFW </span>content, do not directly mention anything that could trigger them<span class="mature">, especially NSFW,</span> when making payments.</p>
+			<p><strong>Use of AI to alter my works, commissioned or not, in any way, shape, or form, will result in a permanent blacklist with no exceptions.</strong></p>
+			<p>To protect ourselves from an unjust policy established by payment processors to target queer <span class="mature">and NSFW </span>content, do not directly write any triggering terms<span class="mature">, especially NSFW,</span> in a way that the processors can read them.</p>
 			
 			<h1 id="Circumstances">Circumstances</h1>
 			<p><strong>I am neurodivergent and may forget about commissions, so don't hesitate to remind me about it. Turnaround time may vary depending on my situation.</strong></p>
 			<p>Midnight (CDT) is my most active time of a day.</p>
-			<p>Due to my selectiveness on drawing species, <strong>non-bugs have a +5% fee</strong>.</p>
+			<p>Due to my drawing experience having most of its focus on bugs, I cannot guarantee any accuracy when it comes to drawing anything outside my preferred character species.</p>
 			
 			<br><br>
 
-			<p>To claim a slot, DM me in <a href="https://twitter.com/aekurmou" target="_blank">Twitter</a>, <a href="https://bsky.app/profile/aekur.xyz" target="_blank">Bluesky</a>, or Discord. Do not send a simple "Hi" or "Hello," as I assume these do not have anything to discuss and then ignore. <strong>Payment is not upfront; The client must wait until told to initiate payment.</strong> Once you and I have completely described the work, I send a very rough sketch, and you agree, pay via <a href="https://ko-fi.com/aekurmou" target="_blank">Ko-fi</a> before I continue. You can withdraw your slot at any time until payment.</p>
+			<p>To claim a slot, DM me in <a href="https://twitter.com/aekurmou" target="_blank">Twitter</a>, <a href="https://bsky.app/profile/aekur.xyz" target="_blank">Bluesky</a> (not recommended until Bluesky implements posting images in DMs), or Discord. Do not send a simple "Hi" or "Hello," as I assume these do not have anything to discuss and then ignore. <strong>Payment is not upfront; The client must wait until told to initiate payment.</strong> Once you and I have completely described the work, I send a very rough sketch, and you agree, pay via <a href="https://ko-fi.com/aekurmou" target="_blank">Ko-fi</a> before I continue. You can withdraw your slot at any time unless you have paid.</p>
 		</main>
 		<script>
 			function toggleMatureMode() {
@@ -207,6 +215,9 @@
 					
 					const price_calc_in_modifier_bg = document.getElementById('price_calc_in_modifier_bg')
 					if (price_calc_in_modifier_bg.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_bg').innerHTML)
+					
+					const price_calc_in_modifier_shading = document.getElementById('price_calc_in_modifier_shading')
+					if (price_calc_in_modifier_shading.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_shading').innerHTML)
 					
 					const price_calc_in_modifier_nonbug = document.getElementById('price_calc_in_modifier_nonbug')
 					if (price_calc_in_modifier_nonbug.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_nonbug').innerHTML)
