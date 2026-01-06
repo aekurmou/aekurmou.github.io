@@ -29,9 +29,8 @@
 			<a href="index.html">art comm</a>
 		</nav>
 		<main>
-			<h1>Art Commission <span style="font-family: serif">&delta;</span></h1>			
+			<h1>Art Commission <span style="font-family: serif">&epsilon;</span></h1>			
 			<img src="commshee_visual.png" width="600px">
-			<p style="font-size: 8pt">Keep in mind that the character shown above was drawn in 5-head proportions, and I recently began moving to 6-head proportions.</p>
 			<br>
 			<p><a id="matureModeToggler" href="javascript:void(0)" onclick="toggleMatureMode(event); return false;">Enable mature mode</a></p>
 			<table class="prices">
@@ -63,15 +62,15 @@
 						<td id="modifier_shading">+10%</td>
 					</tr>
 					<tr>
-						<td>Background</td>
-						<td id="modifier_bg">+25%</td>
+						<td>Complex Background<sup>[1]</sup></td>
+						<td id="modifier_bg">+40%</td>
 					</tr>
-					<tr>
+					<!--<tr>
 						<td>Non-bug<sup>[1][2]</sup></td>
 						<td id="modifier_nonbug">+5%</td>
-					</tr>
+					</tr>-->
 					<tr>
-						<td>Complex Pose</td>
+						<td>Complex Pose<sup>[2]</sup></td>
 						<td id="modifier_complexpose">+20%</td>
 					</tr>
 					<tr>
@@ -84,14 +83,16 @@
 					</tr>
 					<tr class="mature">
 						<td>NSFW<sup>[4]</sup></td>
-						<td id="modifier_nsfw">+30%</td>
+						<td id="modifier_nsfw">+20%</td>
 					</tr>
 				</tbody>
 			</table>
 			<ul style="font-size: 8pt">
-				<li><sup>[1]</sup>See <a href="#Circumstances">Circumstances</a></li>
-				<li><sup>[2]</sup>Insects and arachnids are considered bugs. Hybrids that contain a bug species are counted as bugs.</li>
-				<li><sup>[3]</sup>Max limit of 2 characters.</li>
+				<!--<li><sup>[1]</sup>See <a href="#Circumstances">Circumstances</a></li>
+				<li><sup>[2]</sup>Insects and arachnids are considered bugs. Hybrids that contain a bug species are counted as bugs.</li>-->
+				<li><sup>[1]</sup>Simple backgrounds (e.g. gradients and shapes) do not count towards the modifier. However, it is considered complex and counts towards the modifier if it features a significant amount of objects such as vegetation, buildings, and room objects, and the subject doesn't entirely encapsulate the canvas.</li>
+				<li><sup>[2]</sup>A pose is considered 'complex' if a subject's head is laterally further from or closer to the camera than pelvis, or a subject's limbs are significantly laterally distant from the body.</li>
+				<li><sup>[3]</sup>Max limit of 3 characters. My own characters do not count towards the modifier, but they still count for the limit.</li>
 				<li class="mature"><sup>[4]</sup>Only for adult (18+) clients. These modifiers are applied exclusively.</li>
 			</ul>
 			<br><br>
@@ -110,12 +111,12 @@
 					<input type="checkbox" id="price_calc_in_modifier_shading" onchange="priceCalculatorRun()">
 					<label for="price_calc_in_modifier_bg">Background</label>
 					<input type="checkbox" id="price_calc_in_modifier_bg" onchange="priceCalculatorRun()">
-					<label for="price_calc_in_modifier_nonbug">Non-bug</label>
-					<input type="checkbox" id="price_calc_in_modifier_nonbug" onchange="priceCalculatorRun()">
+					<!--<label for="price_calc_in_modifier_nonbug">Non-bug</label>
+					<input type="checkbox" id="price_calc_in_modifier_nonbug" onchange="priceCalculatorRun()">-->
 					<br><label for="price_calc_in_modifier_complexpose">Complex Pose</label>
 					<input type="checkbox" id="price_calc_in_modifier_complexpose" onchange="priceCalculatorRun()">
 					<br><label for="price_calc_in_modifier_extrachar">Character Count:</label>
-					<input type="number" id="price_calc_in_modifier_extrachar" min="1" max="2" step="1" value="1" onchange="priceCalculatorRun()">
+					<input type="number" id="price_calc_in_modifier_extrachar" min="1" max="3" step="1" value="1" onchange="priceCalculatorRun()">
 					<span class="mature">
 						<br><label for="price_calc_in_modifier_agerating">Appropriateness:</label>
 						<select id="price_calc_in_modifier_agerating" onchange="priceCalculatorRun()">
@@ -149,7 +150,7 @@
 				<caption>Negative</caption>
 				<li>Extreme detail</li>
 				<li>Feral</li>
-				<li>Fetish</li>
+				<li>Fetish<sup class="mature">[5]</sup></li>
 				<li>Hate art</li>
 				<li>Mecha</li>
 				<li>Canine snout<sup>[3]</sup></li>
@@ -159,7 +160,9 @@
 				<li><sup>[2]</sup>This may cause the work to be considered sensitive/suggestive.</li>
 				<li><sup>[3]</sup>See <a href="#Circumstances">Circumstances</a></li>
 				<li class="mature"><sup>[4]</sup>Only for adult (18+) clients.</li>
-			</ul>			
+				<li class="mature"><sup>[5]</sup>Exceptions include hyper.</li>
+			</ul>
+			<p>Est. turnaround time: <b>2 days ~ 3 weeks</b>. You will be notified if the slot will take longer than expected.</p>
 			<p>If you have any questions, feel free to ask!</p>
 			
 			<h1 id="ToS">Terms of Service</h1>
@@ -219,8 +222,8 @@
 					const price_calc_in_modifier_shading = document.getElementById('price_calc_in_modifier_shading')
 					if (price_calc_in_modifier_shading.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_shading').innerHTML)
 					
-					const price_calc_in_modifier_nonbug = document.getElementById('price_calc_in_modifier_nonbug')
-					if (price_calc_in_modifier_nonbug.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_nonbug').innerHTML)
+					//const price_calc_in_modifier_nonbug = document.getElementById('price_calc_in_modifier_nonbug')
+					//if (price_calc_in_modifier_nonbug.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_nonbug').innerHTML)
 					
 					const price_calc_in_modifier_complexpose = document.getElementById('price_calc_in_modifier_complexpose')
 					if (price_calc_in_modifier_complexpose.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_complexpose').innerHTML)
