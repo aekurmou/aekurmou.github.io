@@ -124,7 +124,7 @@ function doCalculation() {
 		
 		let divisorList = generateDivisorsFromUniqueFactorArray(uniquePrimeFactorListLength);
 		
-		displayOutput(primeFactors.length > 1 ? 2 : 1, uniquePrimeFactorListLength, divisorList);
+		displayOutput(inputNumber >= 2 ? (primeFactors.length > 1 ? 2 : 1) : 0, uniquePrimeFactorListLength, divisorList);
 	}
 	catch {
 		displayOutput(0, [], []);
