@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>aekur.xyz ~ base convert</title>
+		<link href="../common.css" rel="stylesheet">
+		<link href="common.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+		</header>		
+		<nav>
+			<a href="index.html">return</a>
+		</nav>
+		<main>
+			<div class="needjs">
+				<h1>number decomposer</h1>
+				<div>
+					<label for="inputNumber">input:</label>
+					<input id="inputNumber" value="3309" class="mono"></input>
+				</div>
+				<br>
+				<br>
+				<div id="largeNumWarnDiv" style="display: none">
+					<strong>this number is considered too large to automatically calculate within a reasonable amount of time. if you do try to calculate anyway, keep in mind that your client might freeze for longer the massive a potential prime factor is! </strong>
+					<a href="javascript:void(0)" onclick="doCalculation()">click here to calculate anyway</a>
+				</div>
+				<div id="primeDiv">
+					<h2>PRIME!</h2>
+				</div>
+				<div id="compositeDiv">
+					<h3>prime factors:</h3>
+					<p><span id="primeFactorSpan"></span></p>
+					<br>
+					<h3>divisors:</h3>
+					<p><span id="divisorSpan"></span></p>
+				</div>
+			</div>
+			<noscript>
+				<style> .needjs { display: none; } </style>
+				<h1>:ε</h1>
+				<p>i cannot function without javascript... please enable it...</p>
+			</noscript>
+		</main>
+		<script src="numberdecompose.js"></script>
+		<script>
+			doCalculation()
+		</script>
+	</body>
+</html>
