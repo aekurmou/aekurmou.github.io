@@ -5,14 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>aekur.xyz</title>
 		<link href="../common.css" rel="stylesheet">
-		<style>
-			.hidden {
-				display: none;
-			}
-			.mature {
-				color: #ffbbdd;
-			}
-		</style>
 	</head>
 	<body>
 		<header>
@@ -31,7 +23,6 @@
 			<h1>Art Commission <span style="font-family: serif">&theta;</span></h1>			
 			<img src="commshee_visual.png" width="600px">
 			<br>
-			<p><a id="matureModeToggler" href="javascript:void(0)" onclick="toggleMatureMode(event); return false;">Enable mature mode</a></p>
 			<table class="prices">
 				<caption>Prices (USD)</caption>
 				<tbody>
@@ -56,18 +47,10 @@
 						<th>Modifier</th>
 						<th>Multiplier Increment</th>
 					</tr>
-					<!--<tr>
-						<td>Shading</td>
-						<td id="modifier_shading">+10%</td>
-					</tr>-->
 					<tr>
 						<td>Complex Background<sup>[1]</sup></td>
 						<td id="modifier_bg">+40%</td>
 					</tr>
-					<!--<tr>
-						<td>Non-bug<sup>[1][2]</sup></td>
-						<td id="modifier_nonbug">+5%</td>
-					</tr>-->
 					<tr>
 						<td>Complex Pose<sup>[2]</sup></td>
 						<td id="modifier_complexpose">+20%</td>
@@ -76,37 +59,13 @@
 						<td>Extra Character<sup>[3]</sup></td>
 						<td id="modifier_extrachar">+40%</td>
 					</tr>
-					<tr class="mature">
-						<td>Suggestive<sup>[4]</sup></td>
-						<td id="modifier_bsfw">+10%</td>
-					</tr>
-					<tr class="mature">
-						<td>NSFW<sup>[4]</sup></td>
-						<td id="modifier_nsfw">+20%</td>
-					</tr>
 				</tbody>
 			</table>
 			<ul style="font-size: 8pt">
-				<!--<li><sup>[1]</sup>See <a href="#Circumstances">Circumstances</a></li>
-				<li><sup>[2]</sup>Insects and arachnids are considered bugs. Hybrids that contain a bug species are counted as bugs.</li>-->
 				<li><sup>[1]</sup>Simple backgrounds (e.g. gradients and shapes) do not count towards the modifier. However, it is considered complex and counts towards the modifier if it features a significant amount of objects such as vegetation, buildings, and room objects, and the subject doesn't entirely encapsulate the canvas.</li>
 				<li><sup>[2]</sup>A pose is considered 'complex' if a subject's head is laterally further from or closer to the camera than pelvis, or a subject's limbs are significantly laterally distant from the body.</li>
 				<li><sup>[3]</sup>Maximum limit of 3 characters. My own characters count as a half, but they still count as a whole for the limit.</li>
-				<li class="mature"><sup>[4]</sup>Only for adult (18+) clients. These modifiers are applied exclusively.</li>
 			</ul>
-			<div class="mature">
-				<h2>What's considered suggestive?</h2>
-				<p>It is considered suggestive if the work satisfies at least one of the following:</p>
-				<ul style="font-size: 10pt; display: flex; flex-direction: column; gap: 10px;">
-					<li>Background features props or scenarios that involve intimacy (e.g. beds).</li>
-					<li>Character's breasts, buttocks, crotch, hips, or thighs are the main focus (can be caused by poses). Measured by lines.</li>
-					<li>Character's facial expression contains excessive blush.</li>
-					<li>Character's (singular) breast spans the head by more than 75% if wearing non-suggestive clothes or 62.5% otherwise. Measured by circles.</li>
-					<li>Character's thigh laterally spans the torso by more than 100%.</li>
-					<li>Clothing is known to be revealing (e.g. tight bikinis).</li>
-					<li>Dialogue contains sexual innuendos.</li>
-				</ul>
-			</div>
 			<br><br>
 			<div id="price_calc" style="display: none;" class="box"><!--PRICE CALC-->
 				<h3>Price Calculator</h3>
@@ -129,14 +88,6 @@
 					<input type="checkbox" id="price_calc_in_modifier_complexpose" onchange="priceCalculatorRun()">
 					<br><label for="price_calc_in_modifier_extrachar">Character Count:</label>
 					<input type="number" id="price_calc_in_modifier_extrachar" min="1" max="3" step="0.5" value="1" onchange="priceCalculatorRun()">
-					<span class="mature">
-						<br><label for="price_calc_in_modifier_agerating">Appropriateness:</label>
-						<select id="price_calc_in_modifier_agerating" onchange="priceCalculatorRun()">
-							<option value="sfw" selected>SFW</option>
-							<option value="bsfw">Suggestive</option>
-							<option value="nsfw">NSFW</option>
-						</select>
-					</span>
 				</p>
 				<p><div id="price_calc_out_price" class="box" style="font-size: 24pt">?</div></p>
 			</div>
@@ -150,8 +101,6 @@
 				<li>Anthro bugs</li>
 				<li>Simple weapons</li>
 				<li>Light gore<sup>[1][2]</sup></li>
-				<li class="mature">Suggestive<sup>[4]</sup></li>
-				<li class="mature">NSFW<sup>[4]</sup></li>
 			</ul>
 			<ul class="inconfident">
 				<caption>Inconfident</caption>
@@ -163,7 +112,7 @@
 				<caption>Negative</caption>
 				<li>Extreme detail</li>
 				<li>Feral</li>
-				<li>Fetish<sup class="mature">[5]</sup></li>
+				<li>Fetish</li>
 				<li>Hate art</li>
 				<li>Mecha</li>
 			</ul><br>
@@ -171,8 +120,6 @@
 				<li><sup>[1]</sup>I have not done this but am willing to draw the feature.</li>
 				<li><sup>[2]</sup>This may cause the work to be considered sensitive/suggestive.</li>
 				<li><sup>[3]</sup>See <a href="#Circumstances">Circumstances</a></li>
-				<li class="mature"><sup>[4]</sup>Only for adult (18+) clients.</li>
-				<li class="mature"><sup>[5]</sup>Exceptions include hyper genitalia and (safe) vore.</li>
 			</ul>
 			<p>Est. turnaround time: <b>2 days ~ 3 weeks</b>. Ko-Fi supporters have queue priority unless they have claimed more than half of the slots. You will be notified if the slot will take longer than expected.</p>
 			<p>If you have any questions, feel free to ask!</p>
@@ -184,9 +131,8 @@
 			<p>Payment is processed through Ko-Fi only.</p>
 			<p>You may not use my work for commercial purposes.</p>
 			<p>You may not remove my watermark and signature.</p>
-			<p class="mature">You may commission as an NSFW account, however the commissioned work may not be presented in my main account due to its 13+ audience. If your commission includes suggestive or NSFW elements, only my appropriate mature account (suggestive and NSFW separately) is used for handling conversations and presenting commissioned work.</p>
 			<p><strong>Use of AI to alter my works, commissioned or not, in any way, shape, or form, will result in a permanent blacklist with no exceptions.</strong></p>
-			<p>To protect ourselves from an unjust policy established by payment processors to target queer <span class="mature">and NSFW </span>content, do not directly write any triggering terms<span class="mature">, especially NSFW,</span> in a way that the processors can detect them.</p>
+			<p>To protect ourselves from an unjust policy established by payment processors to target queer content, do not directly write any triggering terms in a way that the processors can detect them.</p>
 			
 			<h1 id="Circumstances">Circumstances</h1>
 			<p><strong>I am neurodivergent and may forget about commissions, so don't hesitate to remind me about it. Turnaround time may vary depending on my situation.</strong></p>
@@ -195,27 +141,10 @@
 			
 			<br><br>
 
-			<p>For claiming a slot, the best way to reach out to me is by momentarily joining my <a href="https://discord.gg/sp3fUSAhzf" target="_blank">workaround Discord server</a>.</p>
+			<p>For claiming a slot, the best way to reach out to me is through Discord DM's or by momentarily joining my <a href="https://discord.gg/sp3fUSAhzf" target="_blank">workaround Discord server</a>.</p>
 			<p>Do not send a simple "Hi" or "Hello," as I assume these do not have anything to discuss and then ignore. <strong>Payment is not upfront; The client must wait until told to initiate payment.</strong> Once you and I have completely described the work, I send a very rough sketch, and you agree, pay via <a href="https://ko-fi.com/aekurmou" target="_blank">Ko-fi</a> before I continue. You can withdraw your slot at any time unless you have paid.</p>
 		</main>
 		<script>
-			function toggleMatureMode() {
-				const elements = document.querySelectorAll('.mature');
-
-				let isHidden = Array.from(elements).every(el => el.classList.contains('hidden'));
-
-				elements.forEach(el => {
-					if (isHidden) {
-						el.classList.remove('hidden');
-					} else {
-						el.classList.add('hidden');
-					}
-				});
-
-				const link = document.getElementById('matureModeToggler');
-				matureModeToggler.textContent = isHidden ? 'Hide mature information' : 'Show mature information';
-			}
-			toggleMatureMode()
 			function priceCalculatorRun() {
 				const price_calc_out_price = document.getElementById('price_calc_out_price');
 				
@@ -243,18 +172,6 @@
 					
 					const price_calc_in_modifier_extrachar = document.getElementById('price_calc_in_modifier_extrachar')
 					modifierInc += 0.01 * parseFloat(document.getElementById('modifier_extrachar').innerHTML) * (price_calc_in_modifier_extrachar.value - 1)
-					
-					const price_calc_in_modifier_agerating = document.getElementById('price_calc_in_modifier_agerating')
-					switch (price_calc_in_modifier_agerating.value) {
-						case "sfw":
-							break
-						case "bsfw":
-							modifierInc += 0.01 * parseFloat(document.getElementById('modifier_bsfw').innerHTML)
-							break
-						case "nsfw":
-							modifierInc += 0.01 * parseFloat(document.getElementById('modifier_nsfw').innerHTML)
-							break
-					}
 					
 					price *= 1.0 + modifierInc;
 					
