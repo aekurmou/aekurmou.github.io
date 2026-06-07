@@ -29,7 +29,7 @@
 		</nav>
 		<main>
 			<strong class="mature">You are viewing this page with mature content visible. If you are under 18 or are uncomfortable with such, <a href="../artcomm/index.html">click here to return to a purely SFW page</a>.</strong>
-			<h1>Art Commission <span style="font-family: serif">&theta;</span></h1>			
+			<h1>Art Commission <span style="font-family: serif">&kappa;</span></h1>			
 			<img src="commshee_visual.png" width="600px">
 			<br>
 			<table class="prices">
@@ -68,12 +68,16 @@
 						<td>Extra Character<sup>[3]</sup></td>
 						<td id="modifier_extrachar">+40%</td>
 					</tr>
+					<tr>
+						<td>Pride Month Discount<sup>[4]</sup></td>
+						<td id="modifier_bonusdiscount">-10%</td>
+					</tr>
 					<tr class="mature">
-						<td>Suggestive<sup>[4]</sup></td>
+						<td>Suggestive<sup>[5]</sup></td>
 						<td id="modifier_bsfw">+10%</td>
 					</tr>
 					<tr class="mature">
-						<td>NSFW<sup>[4]</sup></td>
+						<td>NSFW<sup>[5]</sup></td>
 						<td id="modifier_nsfw">+20%</td>
 					</tr>
 				</tbody>
@@ -82,7 +86,8 @@
 				<li><sup>[1]</sup>Simple backgrounds (e.g. gradients and shapes) do not count towards the modifier. However, it is considered complex and counts towards the modifier if it features a significant amount of objects such as vegetation, buildings, and room objects, and the subject doesn't entirely encapsulate the canvas.</li>
 				<li><sup>[2]</sup>A pose is considered 'complex' if a subject's head is laterally further from or closer to the camera than pelvis, or a subject's limbs are significantly laterally distant from the body.</li>
 				<li><sup>[3]</sup>Maximum limit of 3 characters. My own characters count as a half, but they still count as a whole for the limit.</li>
-				<li class="mature"><sup>[4]</sup>Only for adult (18+) clients. These modifiers are applied exclusively.</li>
+				<li><sup>[4]</sup>Eligible if the work primarily showcases the character's pride. <b>Complex backgrounds do not count</b>.</li>
+				<li class="mature"><sup>[5]</sup>Only for adult (18+) clients. These modifiers are applied exclusively.</li>
 			</ul>
 			<div class="mature">
 				<h2>What's considered suggestive?</h2>
@@ -113,6 +118,8 @@
 					<input type="checkbox" id="price_calc_in_modifier_bg" onchange="priceCalculatorRun()">
 					<br><label for="price_calc_in_modifier_complexpose">Complex Pose</label>
 					<input type="checkbox" id="price_calc_in_modifier_complexpose" onchange="priceCalculatorRun()">
+					<br><label for="price_calc_in_modifier_bonusdiscount">Pride Month Discount</label>
+					<input type="checkbox" id="price_calc_in_modifier_bonusdiscount" onchange="priceCalculatorRun()">
 					<br><label for="price_calc_in_modifier_extrachar">Character Count:</label>
 					<input type="number" id="price_calc_in_modifier_extrachar" min="1" max="3" step="0.5" value="1" onchange="priceCalculatorRun()">
 					<span class="mature">
@@ -209,6 +216,9 @@
 					
 					const price_calc_in_modifier_complexpose = document.getElementById('price_calc_in_modifier_complexpose')
 					if (price_calc_in_modifier_complexpose.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_complexpose').innerHTML)
+					
+					const price_calc_in_modifier_bonusdiscount = document.getElementById('price_calc_in_modifier_bonusdiscount')
+					if (price_calc_in_modifier_bonusdiscount.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_bonusdiscount').innerHTML)
 					
 					const price_calc_in_modifier_extrachar = document.getElementById('price_calc_in_modifier_extrachar')
 					modifierInc += 0.01 * parseFloat(document.getElementById('modifier_extrachar').innerHTML) * (price_calc_in_modifier_extrachar.value - 1)
