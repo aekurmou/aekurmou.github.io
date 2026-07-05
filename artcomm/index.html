@@ -20,7 +20,7 @@
 			<a href="index.html">art comm</a>
 		</nav>
 		<main>
-			<h1>Art Commission <span style="font-family: serif">&kappa;</span></h1>			
+			<h1>Art Commission <span style="font-family: serif">&lambda;</span></h1>			
 			<img src="commshee_visual.png" width="600px">
 			<br>
 			<table class="prices">
@@ -32,11 +32,11 @@
 					</tr>
 					<tr>
 						<th>HALF</th>
-						<td id="price_half">40</td>
+						<td id="price_half">45</td>
 					</tr>
 					<tr>
 						<th>FULL</th>
-						<td id="price_full">45</td>
+						<td id="price_full">50</td>
 					</tr>
 				</tbody>
 			</table>
@@ -60,8 +60,8 @@
 						<td id="modifier_extrachar">+40%</td>
 					</tr>
 					<tr>
-						<td>Pride Month Discount<sup>[4]</sup></td>
-						<td id="modifier_bonusdiscount">-10%</td>
+						<td>Reference Angle<sup>[4]</sup></td>
+						<td id="modifier_refang">+25%</td>
 					</tr>
 				</tbody>
 			</table>
@@ -69,7 +69,7 @@
 				<li><sup>[1]</sup>Simple backgrounds (e.g. gradients and shapes) do not count towards the modifier. However, it is considered complex and counts towards the modifier if it features a significant amount of objects such as vegetation, buildings, and room objects, and the subject doesn't entirely encapsulate the canvas.</li>
 				<li><sup>[2]</sup>A pose is considered 'complex' if a subject's head is laterally further from or closer to the camera than pelvis, or a subject's limbs are significantly laterally distant from the body.</li>
 				<li><sup>[3]</sup>Maximum limit of 3 characters. My own characters count as a half, but they still count as a whole for the limit.</li>
-				<li><sup>[4]</sup>Eligible if the work primarily showcases the character's pride. <b>Complex backgrounds do not count</b>.</li>
+				<li><sup>[4]</sup>Reference sheets always use FULL base price. This modifier applies for each extra halfbody/fullbody angle of the character.</li>
 			</ul>
 			<br><br>
 			<div id="price_calc" style="display: none;" class="box"><!--PRICE CALC-->
@@ -91,10 +91,10 @@
 					<input type="checkbox" id="price_calc_in_modifier_nonbug" onchange="priceCalculatorRun()">-->
 					<br><label for="price_calc_in_modifier_complexpose">Complex Pose</label>
 					<input type="checkbox" id="price_calc_in_modifier_complexpose" onchange="priceCalculatorRun()">
-					<br><label for="price_calc_in_modifier_bonusdiscount">Pride Month Discount</label>
-					<input type="checkbox" id="price_calc_in_modifier_bonusdiscount" onchange="priceCalculatorRun()">
 					<br><label for="price_calc_in_modifier_extrachar">Character Count:</label>
 					<input type="number" id="price_calc_in_modifier_extrachar" min="1" max="3" step="0.5" value="1" onchange="priceCalculatorRun()">
+					<br><label for="price_calc_in_modifier_refang">Reference Angles</label>
+					<input type="number" id="price_calc_in_modifier_refang" min="1" max="3" step="1" value="1" onchange="priceCalculatorRun()">
 				</p>
 				<p><div id="price_calc_out_price" class="box" style="font-size: 24pt">?</div></p>
 			</div>
@@ -177,11 +177,14 @@
 					const price_calc_in_modifier_complexpose = document.getElementById('price_calc_in_modifier_complexpose')
 					if (price_calc_in_modifier_complexpose.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_complexpose').innerHTML)
 					
-					const price_calc_in_modifier_bonusdiscount = document.getElementById('price_calc_in_modifier_bonusdiscount')
-					if (price_calc_in_modifier_bonusdiscount.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_bonusdiscount').innerHTML)
+					//const price_calc_in_modifier_bonusdiscount = document.getElementById('price_calc_in_modifier_bonusdiscount')
+					//if (price_calc_in_modifier_bonusdiscount.checked) modifierInc += 0.01 * parseFloat(document.getElementById('modifier_bonusdiscount').innerHTML)
 					
 					const price_calc_in_modifier_extrachar = document.getElementById('price_calc_in_modifier_extrachar')
 					modifierInc += 0.01 * parseFloat(document.getElementById('modifier_extrachar').innerHTML) * (price_calc_in_modifier_extrachar.value - 1)
+					
+					const price_calc_in_modifier_refang = document.getElementById('price_calc_in_modifier_refang')
+					modifierInc += 0.01 * parseFloat(document.getElementById('modifier_refang').innerHTML) * (price_calc_in_modifier_refang.value - 1)
 					
 					price *= 1.0 + modifierInc;
 					
