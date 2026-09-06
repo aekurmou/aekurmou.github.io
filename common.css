@@ -1,266 +1,195 @@
 /* import font */
 @font-face {
     font-family: 'CascadiaMono';
-    src: url('fonts/CascadiaMono.ttf') format('truetype');
+    src: url('assets/fonts/CascadiaMono.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-/*@font-face {
-    font-family: 'Roboto';
-    src: url('fonts/Roboto-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}*/
 
-/* general */
 :root {
-	background-image: url('bg.png');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	--c0: #FFFFFF;/*#c0c0c0;*/
-	--c0s: #c0c0c0;
-	
-	--cdivbg: #000000C0;
-	--cdivbd: #FFFFFFFF;
-	
-	--c1: #9EB5D8;
-	--c2: #D69ED0;
-	--c3: #D6BF9E;
-	--c4: #9ED6A4;
-	
-	--c1s: #72ACFF;
-	--c2s: #FF74F1;
-	--c3s: #FFC674;
-	--c4s: #74FF83;
-	
-	--cR: #FF006E;
-	--cG: #00FF21;
-	--cB: #0072FF;
-	--cY: #FFD800;
-	
 	font-family: 'CascadiaMono';
-	background-color: #9999FF;
-	color: var(--c0);
+	color: white;
 	
-	transition: opacity 250ms;
-}
-body {
-	animation: animOpacity 0.5s ease-out forwards;
-}
-body > header {
-	animation: animScale 0.5s ease-out forwards;
+	font-size: 12pt;
+	
+	--primary-bg-color: #C8BDFF;
+	--primary-bg-color-dark1: #493F7F;
+	--primary-bg-color-dark2: #170F3F;
+	/*--primary-bg-color-dark3: #8378BF;*/
 }
 
-@keyframes animOpacity {
-	from {
-		opacity: 0.25;
-	}
-	to {
-		opacity: 1;
-	}
-}
-@keyframes animScale {
-	from {
-		transform: scale(0.95);
-	}
-	to {
-		transform: scale(1);
-	}
+html, body {
+	margin: 0;
+	padding: 0;
+	
+	min-height: 100vh;
+	
+	display: flex;
+	flex-direction: column;
+	
+	background-color: var(--primary-bg-color);
 }
 
-a {
-	color: var(--c1s);
-}
-a:hover {
-	color: var(--c2s);
-}
-a:active {
-	color: var(--c4s);
+header, footer {
+	position: sticky;
+	
+	left: 0;
+	right: 0;
+	
+	z-index: 999999;
+	
+	padding: 1rem 0;
+	
+	overflow-x: auto !important;
 }
 
-.logo {
-	text-align: center;
-	display: block;
+header {
 	
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-.logo > * {
-	vertical-align: middle;
-	color: #ffffff;
-	font-size: 60px;
-	font-weight: bold;
+	top: 0;
 	
-	transition: transform 150ms;
-}
-.logo > *:hover {	
-	transform: scale(1.1);
+	background-color: var(--primary-bg-color-dark2);
 }
 
-.logo > *:active {	
-	transform: scale(0.9);
+footer {
+	bottom: 0;
+	
+	margin-top: auto;
+	
+	z-index: 999999;
+	
+	background-color: var(--primary-bg-color-dark2);
 }
 
-.box {
-	display: inline-block;
+main {
+	width: 80vw;
+	min-width: 300px;
 	
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	
-	background-color: var(--cdivbg);
-	border-radius: 20px;
-	border: 2px solid var(--cdivbd);
-	
-	padding: 10px;
-}
-
-main, nav {
-	margin: 0 auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	
-	max-width: 800px;
-	
-	background-color: var(--cdivbg);
-	border-radius: 20px;
-	border: 2px solid var(--cdivbd);
+	margin-top: 30px;
+	margin-bottom: 30px;
 	
 	padding: 30px;
-}
-
-main {	
-	margin-top: 20px;
-	margin-bottom: 20px;
 	
-	text-align: center;
+	background-color: var(--primary-bg-color-dark1);
+	color: white;
 }
 
 nav {
 	display: flex;
-	justify-content: center;
 	
-	padding: 1px;
+	align-items: center;
+	align-content: center;
 	
-	/*border: 2px solid var(--c0);*/
-	
+	margin-top: -10px;
+	margin-bottom: -10px;
 }
-
 nav > a {
-	
-	font-weight: bold;
-	text-decoration: none;
-	
-	margin: 10px;
-	margin-left: 5px;
-	margin-right: 5px;
-	
-	padding: 5px;
+	white-space: nowrap;
+}
 
+h1, h2, h3, h4, h5, h6 {
 	text-align: center;
-	
-	border: 2px solid var(--c1s);
-	color: white;
-	min-width: 150px;
-	
-	transition: border 150ms;
-}
-nav > a:hover {	
-	border: 2px solid var(--c2s);
-	color: white;
-}
-nav > a:active {	
-	border: 2px solid var(--c4s);
-	color: white;
-}
-
-ul {
-	display: inline-block;
-	list-style: none; /* Remove default bullets */
-	padding-left: 1em; /* Optional: Add space for the custom symbol */
-}
-ul.positive li::before {
-	content: "+";      /* Add the + symbol */
-	margin-right: 0.5em;
-	font-weight: bold; /* Make only the + bold */
-	color: var(--cG);
-}
-ul.positive li {
-	color: var(--cG);
-}
-ul.negative li::before {
-	content: "-";
-	margin-right: 0.5em;
-	font-weight: bold;
-	color: var(--cR);
-}
-ul.negative li {
-	color: var(--cR);
-}
-ul.inconfident li::before {
-	content: "?";
-	margin-right: 0.5em;
-	font-weight: bold;
-	color: var(--cY);
-}
-ul.inconfident li {
-	color: var(--cY);
-}
-ul > caption {
-	font-weight: bold;
 }
 
 table {
-	display: inline-block;
-	
-	margin: 30px auto;
-	
-	font-size: 24pt;
-	
-	background-color: var(--cdivbg);
-	border-radius: 20px;
-	
-	/*border: 1px dashed white;*/
+	border: 2px solid var(--primary-bg-color-dark2);
+	background-color: var(--primary-bg-color-dark1);
 }
-table {
-	margin: 30px auto;
+table th, table td {
+	border: 2px solid var(--primary-bg-color-dark1);
+	background-color: var(--primary-bg-color-dark2);
 	
-	font-size: 16pt;
-	
-	background-color: var(--cdivbg);
-	border-radius: 20px;
-	
-	/*border: 1px dashed white;*/
-}
-table > tbody > tr > th {
 	padding: 10px;
-}
-table > tbody > tr > td {
-	padding: 10px;
-}
-table.prices > tbody > tr > th {
-	font-size: 18pt;
-}
-table.prices > tbody > tr > td {
-	font-size: 24pt;
-}
-
-.unavail {
-	color: gray; /* Change text color to gray */
-	position: relative; /* Needed for absolute positioning of the line */
-}
-
-.unavail::before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background-color: var(--cR); /* Red line */
-	transform: translateY(-50%);
-	pointer-events: none; /* So the line doesn't interfere with clicks */
+	
+	font-size: 20pt;
 }
 
 strong {
-	color: var(--cY);
+	color: #FFD800;
+}
+
+a {
+	color: #72ACFF;
+}
+a:hover {
+	color: #FF74F1;
+}
+a:active {
+	color: #74FF83;
+}
+
+.button {
+	border: 2px solid #d0d0d0;
+	
+	background-image: linear-gradient(to bottom, var(--primary-bg-color-dark2), var(--primary-bg-color-dark1));
+	
+	text-shadow: 0px 2px 2px black;
+	
+	margin: 5px;
+	padding: 10px;
+	
+	font-size: 14pt;
+	text-align: center;
+}
+
+.button:hover {
+	border: 2px solid white;
+	
+	background-image: linear-gradient(to bottom, var(--primary-bg-color-dark2), var(--primary-bg-color));
+}
+
+
+a.button {
+	text-decoration: none;
+	
+	color: white;
+	background-color: var(--primary-bg-color-dark2);
+}
+
+div.imgframe {
+	display: inline-block;
+	
+	margin: 20px;
+	padding: 10px;
+	
+	background-color: white !important;
+	border: 5px solid gray;
+	
+	color: black;
+	text-align: center;
+}
+div.imgframe > img {
+	/*display: block;*/
+}
+
+div.social {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.social > img {
+	height: 20px;
+	float: left;
+}
+
+div.gridlist {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	
+	justify-content: space-evenly;
+	align-items: center;
+	
+	/*border: 1px dashed white;*/
+}
+div.gridlist > div {
+	max-width: 300px;
+	margin: 15px;
+	padding: 15px;
+	
+	background-color: var(--primary-bg-color-dark2);
+	
+	text-align: center;
 }
